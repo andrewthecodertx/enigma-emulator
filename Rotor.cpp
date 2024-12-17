@@ -1,7 +1,5 @@
 #include "include/Rotor.hpp"
 
-using namespace std;
-
 Rotor::Rotor(const string &wiring, char notch)
     : wiring_(wiring), notch_(notch), position_(0) {}
 

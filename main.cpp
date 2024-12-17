@@ -1,8 +1,6 @@
 #include "include/Enigma.hpp"
 #include <iostream>
 
-using namespace std;
-
 int main() {
   string rotorI_wiring = "EKMFLGDQVZNTOWYHXUSPAIBRCJ";
   string rotorII_wiring = "AJDKSIRUXBLHWTMCQGZNPYFVOE";

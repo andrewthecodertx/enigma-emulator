@@ -1,7 +1,5 @@
 #include "include/Enigma.hpp"
 
-using namespace std;
-
 Enigma::Enigma(const array<Rotor, 3> &rotors, const Reflector &reflector,
                const map<char, char> &plugboard)
     : rotors_(rotors), reflector_(reflector), plugboard_(plugboard) {}
