@@ -1,22 +1,8 @@
-#include <string>
+#include "include/Rotor.hpp"
 
-class Rotor {
-public:
-  Rotor(const std::string &wiring, char notch);
+using namespace std;
 
-  void SetPosition(char c);
-  void Advance();
-  char EncodeForward(char c) const;
-  char EncodeBackward(char c) const;
-  bool AtNotch() const;
-
-private:
-  std::string wiring_;
-  char notch_;
-  int position_;
-};
-
-Rotor::Rotor(const std::string &wiring, char notch)
+Rotor::Rotor(const string &wiring, char notch)
     : wiring_(wiring), notch_(notch), position_(0) {}
 
 void Rotor::SetPosition(char c) { position_ = c - 'A'; }

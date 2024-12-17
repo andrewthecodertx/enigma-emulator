@@ -1,28 +1,9 @@
-#include "Reflector.cpp"
-#include "Rotor.cpp"
-#include <array>
-#include <map>
-#include <string>
+#include "include/Enigma.hpp"
 
-class Enigma {
-public:
-  Enigma(const std::array<Rotor, 3> &rotors, const Reflector &reflector,
-         const std::map<char, char> &plugboard);
+using namespace std;
 
-  char EncryptChar(char c);
-  std::string EncryptMessage(const std::string &msg);
-  void SetRotorPositions(char left, char middle, char right);
-
-private:
-  void StepRotors();
-
-  std::array<Rotor, 3> rotors_;
-  Reflector reflector_;
-  std::map<char, char> plugboard_;
-};
-
-Enigma::Enigma(const std::array<Rotor, 3> &rotors, const Reflector &reflector,
-               const std::map<char, char> &plugboard)
+Enigma::Enigma(const array<Rotor, 3> &rotors, const Reflector &reflector,
+               const map<char, char> &plugboard)
     : rotors_(rotors), reflector_(reflector), plugboard_(plugboard) {}
 
 void Enigma::SetRotorPositions(char left, char middle, char right) {
@@ -32,11 +13,11 @@ void Enigma::SetRotorPositions(char left, char middle, char right) {
 }
 
 char Enigma::EncryptChar(char c) {
-  if (!std::isalpha(static_cast<unsigned char>(c))) {
+  if (!isalpha(static_cast<unsigned char>(c))) {
     return c;
   }
 
-  c = static_cast<char>(std::toupper(static_cast<unsigned char>(c)));
+  c = static_cast<char>(toupper(static_cast<unsigned char>(c)));
 
   StepRotors();
 
@@ -57,10 +38,10 @@ char Enigma::EncryptChar(char c) {
   return c;
 }
 
-std::string Enigma::EncryptMessage(const std::string &msg) {
-  std::string result;
+string Enigma::EncryptMessage(const string &msg) {
+  string result;
   for (auto ch : msg) {
-    if (std::isalpha(static_cast<unsigned char>(ch))) {
+    if (isalpha(static_cast<unsigned char>(ch))) {
       result.push_back(EncryptChar(ch));
     } else {
       result.push_back(ch);
