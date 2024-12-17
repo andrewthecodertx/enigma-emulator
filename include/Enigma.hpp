@@ -1,6 +1,3 @@
-#ifndef ENIGMA_HPP
-#define ENIGMA_HPP
-
 #include "Reflector.hpp"
 #include "Rotor.hpp"
 #include <array>
@@ -24,5 +21,3 @@ private:
   Reflector reflector_;
   map<char, char> plugboard_;
 };
-
-#endif

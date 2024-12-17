@@ -1,6 +1,3 @@
-#ifndef ROTOR_HPP
-#define ROTOR_HPP
-
 #include <string>
 
 using namespace std;
@@ -20,5 +17,3 @@ private:
   char notch_;
   int position_;
 };
-
-#endif

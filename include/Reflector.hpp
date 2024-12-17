@@ -1,6 +1,3 @@
-#ifndef REFLECTOR_HPP
-#define REFLECTOR_HPP
-
 #include <string>
 
 using namespace std;
@@ -14,5 +11,3 @@ public:
 private:
   string wiring_;
 };
-
-#endif
