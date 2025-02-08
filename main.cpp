@@ -27,7 +27,7 @@ int main() {
   Enigma enigma(rotors, reflectorB, plugboard);
   enigma.SetRotorPositions('A', 'A', 'A');
 
-  string plaintext = "HELLOWORLD";
+  string plaintext = "here comes the music. please listen";
   string ciphertext = enigma.EncryptMessage(plaintext);
   cout << "Plaintext:  " << plaintext << "\n";
   cout << "Ciphertext: " << ciphertext << "\n";
